@@ -1,18 +1,24 @@
 call plug#begin('~/.vim/plugged')
   Plug 'bronson/vim-visual-star-search'
   Plug 'christoomey/vim-tmux-navigator'
+  Plug 'cakebaker/scss-syntax.vim'
   Plug 'cskeeters/vim-smooth-scroll'
   Plug 'elzr/vim-json'
+  Plug 'hail2u/vim-css3-syntax'
   Plug 'honza/vim-snippets'
   Plug 'itchyny/lightline.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/rainbow_parentheses.vim'
+  Plug 'machakann/vim-highlightedyank'
   Plug 'mengelbrecht/lightline-bufferline'
   Plug 'mhartington/oceanic-next'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'othree/html5-syntax.vim'
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+  Plug 'posva/vim-vue'
   Plug 'preservim/nerdtree'
+  Plug 'rhysd/git-messenger.vim'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
@@ -127,12 +133,28 @@ nnoremap <leader>ma :Marks<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>ta :Tags<CR>
 
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'Ignore'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Label'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
 let g:fzf_tags_command = 'ctags --recurse=yes --quiet=yes --languages=+javascript,-html,-css,-json'
 let g:fzf_layout = { 'window': 'enew' }
 let g:fzf_layout = { 'window': '-tabnew' }
 let g:fzf_layout = { 'window': '10split enew' }
 let g:fzf_layout = { 'down' : '~50%' }
 let g:fzf_action = { 'ctrl-t': 'tab split', 'ctrl-s': 'split', 'ctrl-v': 'vsplit' }
+" Floating FZF
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
 " ======================= Git-Messenger =========================
@@ -203,6 +225,11 @@ let g:test#javascript#runner = 'jest'
 let g:indentLine_char = '┊'
 nmap <Leader>il :IndentLinesToggle<CR>
 
+
+" ======================= HighlightedYank ========================
+
+let g:highlightedyank_highlight_duration = 3000
+
 " =================== RainbowParentheses =====================
 
 let g:rainbow#max_level = 12
@@ -212,6 +239,11 @@ augroup rainbow_filetypes
   autocmd!
   autocmd FileType vim,css,html,javascript,ruby,vue,json RainbowParentheses
 augroup END
+
+" ======================= Vim-Vue ========================
+
+" Limit syntax highlighting to following preprocessors.
+let g:vue_pre_processors = ['sass', 'scss']
 
 " ======================= CoC ========================
 
@@ -257,4 +289,3 @@ let g:coc_snippet_next = '<tab>'
 " Bracket open on <CR>
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
       \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-

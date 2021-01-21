@@ -134,7 +134,7 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # ================================================================
-# fzf colorscheme
+# fzf colorscheme to match OceanicNext
 # ================================================================
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  --color=fg:#c0c5ce,bg:#1b2b34,hl:#5fb3b3
