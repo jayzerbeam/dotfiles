@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'hail2u/vim-css3-syntax'
   Plug 'honza/vim-snippets'
   Plug 'itchyny/lightline.vim'
+  Plug 'jparise/vim-graphql'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/rainbow_parentheses.vim'
@@ -63,6 +64,7 @@ function! OpenTerminal()
   vsplit term://bash
   set nonumber norelativenumber
 endfunction
+
 nnoremap <C-n> :call OpenTerminal()<CR>
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -133,29 +135,9 @@ nnoremap <leader>ma :Marks<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>ta :Tags<CR>
 
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'Ignore'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Label'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
+let g:fzf_colors = { 'border':  ['fg', 'Label'] }
 let g:fzf_tags_command = 'ctags --recurse=yes --quiet=yes --languages=+javascript,-html,-css,-json'
-let g:fzf_layout = { 'window': 'enew' }
-let g:fzf_layout = { 'window': '-tabnew' }
-let g:fzf_layout = { 'window': '10split enew' }
-let g:fzf_layout = { 'down' : '~50%' }
 let g:fzf_action = { 'ctrl-t': 'tab split', 'ctrl-s': 'split', 'ctrl-v': 'vsplit' }
-" Floating FZF
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
 " ======================= Git-Messenger =========================
 
@@ -235,6 +217,9 @@ let g:highlightedyank_highlight_duration = 3000
 let g:rainbow#max_level = 12
 let g:rainbow#pairs = [['(',')'], ['[',']'], ['{','}']]
 
+" All Oceanic Next besides white and colors
+let g:rainbow#blacklist = ['#1b2b34', '#343d46', '#4f5b66', '#65737e', '#a7adba', '#c0c5ce', '#cdd3de']
+
 augroup rainbow_filetypes
   autocmd!
   autocmd FileType vim,css,html,javascript,ruby,vue,json RainbowParentheses
@@ -259,12 +244,16 @@ endfunction
 
 " Show all diagnostics
 nnoremap <silent> <Leader>cd  :<C-u>CocList diagnostics<cr>
+
 " Manage extensions
 nnoremap <silent> <Leader>cx  :<C-u>CocList extensions<cr>
+
 " Show commands
 nnoremap <silent> <Leader>cc  :<C-u>CocList commands<cr>
+
 " Find symbol of current document
 nnoremap <silent> <Leader>co  :<C-u>CocList outline<cr>
+
 " Search workspace symbols
 nnoremap <silent> <Leader>cs  :<C-u>CocList -I symbols<cr>
 
