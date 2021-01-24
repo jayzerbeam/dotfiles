@@ -14,6 +14,7 @@
     "typescriptreact",
     "vue"
   ],
+  "clangd.semanticHighlighting": true,
   "diagnostic.enable": true,
   "diagnostic.checkCurrentLine": false,
   "diagnostic.messageDelay": 300,
@@ -36,5 +37,22 @@
   "tslint.enable": true,
   "tslint.autoFixOnSave": false,
   "tsserver.formatOnType": false,
-  "yank.highlight.duration": 3000
+  "yank.highlight.duration": 3000,
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "rootPatterns": [".ccls-root", "compile_commands.json"],
+      "initializationOptions": {
+        "cache": {
+          "directory": ".ccls-cache"
+        },
+        "client": {
+          "snippetSupport": true
+        },
+        "highlight": { "lsRanges": true }
+      }
+    }
+  },
+  "clangd.path": "/home/jasonlong/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
 }

@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'hail2u/vim-css3-syntax'
   Plug 'honza/vim-snippets'
   Plug 'itchyny/lightline.vim'
+  Plug 'jackguo380/vim-lsp-cxx-highlight'
   Plug 'jparise/vim-graphql'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
