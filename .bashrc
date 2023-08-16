@@ -4,8 +4,8 @@
 
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -37,39 +37,38 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+xterm-color | *-256color) color_prompt=yes ;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1="${debian_chroot:+($debian_chroot)}\u@\h:\w\$ "
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
+xterm* | rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
-*)
-    ;;
+*) ;;
 esac
 
 # enable color support of ls and also add handy aliases
@@ -85,7 +84,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+# export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -109,18 +108,81 @@ fi
 # User-defined aliases
 # ================================================================
 
-# Locations
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+# Bare dotfiles repo
+alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+# alias config='/usr/bin/git --git-dir=/home/jasonlong/.cfg/ --work-tree=/home/jasonlong'
 
 # Dotfiles
 alias nb="nvim ~/.bashrc"
-alias nnv="nvim ~/.config/nvim/init.vim"
 alias nt="nvim ~/.tmux.conf"
 alias ng="nvim ~/.gitconfig"
+alias nw="nvim ~/.wezterm.lua"
+
+# Shortcuts
+alias nv="nvim"
+alias dn="dotnet"
+alias pvc="protonvpn-cli"
 
 # Commands
+alias rb="source ~/.bashrc"
+alias rt="tmux source ~/.tmux.conf"
 alias pbcopy="xclip -sel clip"
 alias q="exit"
+alias h="hstr"
+alias c="clear"
+alias upg="sudo apt-get update && sudo apt-get upgrade"
+
+# Git
+alias g="git"
+alias ga="g add"
+alias gbr="g branch"
+alias gci="g commit"
+alias gco="git checkout"
+alias gcom="g checkout main"
+alias gcp="g cherry-pick"
+alias gdif="g diff"
+alias gft="g fetch"
+alias glg="g log"
+alias gpl="g pull"
+alias gpu="g push"
+alias grb="g rebase"
+alias grr="g restore"
+alias grt="g reset"
+alias gstl="g status --long"
+alias gsts="g status --short"
+
+# Locations
+alias desk="cd ~/Desktop/"
+alias down="cd ~/Downloads/"
+alias docs="cd ~/Documents/"
+alias fonts="cd ~/.local/share/fonts/"
+alias proj="cd ~/projects/"
+alias unity="cd ~/projects/unity/"
+alias hb="cd ~/projects/unity/Hero\ Born/Assets/Scripts/"
+alias htb="cd ~/projects/htb/"
+alias omscs="cd ~/Documents/omscs/courses"
+alias reel="cd ~/Documents/omscs/courses/vgd/Projects/Reeldeal/"
+alias keys="cd /home/jasonlong/.ssh/"
+alias vgd="cd ~/Documents/omscs/courses/vgd/"
+alias im="cd ~/projects/insertmode/"
+alias fso="cd ~/projects/full-stack-open/"
+
+# Neovim Config
+alias nconf="cd ~/.config/nvim/"
+
+# ================================================================
+# dotnet
+# ================================================================
+
+export DOTNET_ROOT="/usr/share/dotnet"
+export MSBuildSDKsPath=$(echo /usr/share/dotnet/sdk/7.*/Sdks)
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# ================================================================
+# vi mode
+# ================================================================
+
+set -o vi
 
 # ================================================================
 # Man Page Colors
@@ -133,33 +195,33 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
-# ================================================================
-# fzf colorscheme to match OceanicNext
-# ================================================================
-export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
- --color=fg:#c0c5ce,bg:#1b2b34,hl:#5fb3b3
- --color=fg+:#ffffff,bg+:#1b2b34,hl+:#99c794
- --color=info:#fac863,prompt:#6699cc,pointer:#f99157
- --color=marker:#ab7967,spinner:#c594c5,header:#ec5f67'
-
-# --files: List files that would be searched but do not search
-# --hidden: Search hidden files and folders
-# --follow: Follow symlinks
-# --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
 PATH="$HOME/.local/bin:$PATH"
+
+export N_PREFIX="$HOME/n"
+[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin" # Added by n-install (see http://git.io/n-install-repo).
+# Usage: hstr [option] [arg1] [arg2]...
+# Shell history suggest box:
+#
+#   --favorites              -f ... show favorites view
+#   --kill-last-command      -k ... delete last command in history
+#   --non-interactive        -n ... print filtered history and exit
+#   --show-configuration     -s ... show configuration to be added to ~/.bashrc
+#   --show-zsh-configuration -z ... show zsh configuration to be added to ~/.zshrc
+#   --show-blacklist         -b ... show commands to skip on history indexation
+#   --insert-in-terminal=[c] -i ... insert command c in terminal prompt and exit
+#   --version                -V ... show version details
+#   --help                   -h ... help
+#
+# Report bugs to martin.dvorak@mindforger.com
+# Home page: https://github.com/dvorka/hstr
