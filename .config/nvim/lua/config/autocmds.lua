@@ -1,6 +1,5 @@
 -- This file is automatically loaded by plugins.init
 
-local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 local function augroup(name)

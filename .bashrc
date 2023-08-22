@@ -156,6 +156,7 @@ alias desk="cd ~/Desktop/"
 alias down="cd ~/Downloads/"
 alias docs="cd ~/Documents/"
 alias proj="cd ~/projects/"
+alias gai="cd ~/Documents/omscs/courses/gai/"
 alias fonts="cd ~/.local/share/fonts/"
 
 # Neovim Config
