@@ -11,7 +11,6 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.default_prog = { "tmux" }
 config.enable_tab_bar = false
 config.font = wezterm.font("MonoLisa Custom Nerd Font", { weight = "Medium" })
 config.font_size = 15
