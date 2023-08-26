@@ -110,13 +110,17 @@ fi
 
 # Bare dotfiles repo
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-# alias config='/usr/bin/git --git-dir=/home/jasonlong/.cfg/ --work-tree=/home/jasonlong'
 
 # Dotfiles
 alias nb="nvim ~/.bashrc"
 alias nt="nvim ~/.tmux.conf"
 alias ng="nvim ~/.gitconfig"
 alias nw="nvim ~/.wezterm.lua"
+
+# tmux
+alias tls="tmux ls"
+alias tas="tmux attach-session"
+alias tks="tmux kill-session"
 
 # Shortcuts
 alias nv="nvim"
@@ -156,7 +160,9 @@ alias desk="cd ~/Desktop/"
 alias down="cd ~/Downloads/"
 alias docs="cd ~/Documents/"
 alias proj="cd ~/projects/"
+alias fso="cd ~/projects/full-stack-open/"
 alias gai="cd ~/Documents/omscs/courses/gai/"
+alias gaipp="cd ~/Documents/omscs/courses/gai/GameAIPathPlanning/"
 alias fonts="cd ~/.local/share/fonts/"
 
 # Neovim Config
