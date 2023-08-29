@@ -108,7 +108,7 @@ fi
 # User-defined aliases
 # ================================================================
 
-# Bare dotfiles repo
+# Bare dotfiles repo for version control
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 # Dotfiles
@@ -116,13 +116,15 @@ alias nb="nvim ~/.bashrc"
 alias nt="nvim ~/.tmux.conf"
 alias ng="nvim ~/.gitconfig"
 alias nw="nvim ~/.wezterm.lua"
+alias nconf="cd ~/.config/nvim/"
 
-# tmux
+# Tmux
+alias td="tmux detach"
 alias tls="tmux ls"
 alias tas="tmux attach-session"
 alias tks="tmux kill-session"
 
-# Shortcuts
+# Program shortcuts
 alias nv="nvim"
 alias dn="dotnet"
 alias pvc="protonvpn-cli"
@@ -132,11 +134,11 @@ alias rb="source ~/.bashrc"
 alias rt="tmux source ~/.tmux.conf"
 alias pbcopy="xclip -sel clip"
 alias q="exit"
-alias h="hstr"
-alias c="clear"
+alias hist="hstr"
+alias cl="clear"
 alias upg="sudo apt-get update && sudo apt-get upgrade"
 
-# Git
+# Git shortcuts
 alias g="git"
 alias ga="g add"
 alias gbr="g branch"
@@ -164,9 +166,6 @@ alias fso="cd ~/projects/full-stack-open/"
 alias gai="cd ~/Documents/omscs/courses/gai/"
 alias gaipp="cd ~/Documents/omscs/courses/gai/GameAIPathPlanning/"
 alias fonts="cd ~/.local/share/fonts/"
-
-# Neovim Config
-alias nconf="cd ~/.config/nvim/"
 
 # ================================================================
 # dotnet
