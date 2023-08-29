@@ -1,65 +1,46 @@
+local keymap = vim.keymap -- for conciseness
+
+-- LEADER
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local keymap = vim.keymap -- for conciseness
+-- RANDOM
+keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear highlights
+keymap.set("n", "<leader>+", "<C-a>") -- increment a number
+keymap.set("n", "<leader>-", "<C-x>") -- decrement number
+keymap.set("i", "<C-c>", "<esc>") -- easier close
 
--- no highlight
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+-- WINDOW SPLITS
+keymap.set("n", "<leader>sv", "<C-w>v") -- vertical window split
+keymap.set("n", "<leader>sh", "<C-w>s") -- horizontal window split
+keymap.set("n", "<leader>se", "<C-w>=") -- equalize window splits
+keymap.set("n", "<leader>sx", ":close<CR>") -- close current window split
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- maximize window splits
 
--- increment number
-keymap.set("n", "<leader>+", "<C-a>")
+-- TABS
+keymap.set("n", "<leader>tc", ":tabnew<CR>") -- create new tab
+keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
+keymap.set("n", "<leader>tX", ":tabonly<CR>") -- close all but current tab
+keymap.set("n", "<leader>tn", ":tabn<CR>") -- next tab
+keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
+keymap.set("n", "<leader>tl", ":tabl<CR>") -- last tab
+keymap.set("n", "<leader>tf", ":tabfir<CR>") -- first tab
 
--- decrement number
-keymap.set("n", "<leader>-", "<C-x>")
+-- DIAGNOSTICS
+keymap.set("n", "<leader>di", vim.diagnostic.open_float) -- show diagnostic
 
-keymap.set("i", "<C-c>", "<esc>")
+-- NeoTree
+keymap.set("n", "<leader>nt", ":Neotree toggle<CR>")
 
--- split window vertically
-keymap.set("n", "<leader>sv", "<C-w>v")
-
--- split window horizontally
-keymap.set("n", "<leader>sh", "<C-w>s")
-
--- make splits equal width
-keymap.set("n", "<leader>se", "<C-w>=")
-
--- close current split window
-keymap.set("n", "<leader>sx", ":close<CR>")
-
--- create new tab
-keymap.set("n", "<leader>tc", ":tabnew<CR>")
-
--- close current tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>")
-
--- close all but current tab
-keymap.set("n", "<leader>tX", ":tabonly<CR>")
-
--- go to next tab
-keymap.set("n", "<leader>tn", ":tabn<CR>")
-
--- go to previous tab
-keymap.set("n", "<leader>tp", ":tabp<CR>")
-
--- go to last tab
-keymap.set("n", "<leader>tl", ":tabl<CR>")
-
--- go to first tab
-keymap.set("n", "<leader>tf", ":tabfir<CR>")
-
--- plugin keymaps
--- Maximize window splits
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
-
--- neotree
-keymap.set("n", "<leader>fe", ":Neotree toggle<CR>")
-
--- telescope
+-- Telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
 keymap.set("n", "<leader>fr", "<cmd>Telescope live_grep<CR>")
 keymap.set("n", "<leader>fs", "<cmd>Telescope grep_string<CR>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
+keymap.set("n", "<leader>ft", "<cmd>Telescope help_tags<CR>")
 
--- diagnostics
-keymap.set("n", "<leader>d", vim.diagnostic.open_float)
+-- Todo
+keymap.set("n", "<leader>do", "<cmd>TodoTrouble<CR>")
+
+-- Trouble
+keymap.set("n", "<leader>tr", "<cmd>TroubleToggle<CR>")
