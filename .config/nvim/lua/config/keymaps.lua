@@ -30,7 +30,7 @@ keymap.set("n", "<leader>tf", ":tabfir<CR>") -- first tab
 keymap.set("n", "<leader>di", vim.diagnostic.open_float) -- show diagnostic
 
 -- NeoTree
-keymap.set("n", "<leader>nt", ":Neotree toggle<CR>")
+keymap.set("n", "<leader>fe", ":Neotree toggle<CR>")
 
 -- Telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
