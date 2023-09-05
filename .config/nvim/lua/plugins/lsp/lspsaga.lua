@@ -1,8 +1,3 @@
-local keymap = vim.keymap.set
-
--- Code action
-keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
-
 return {
 	"glepnir/lspsaga.nvim",
 	event = "LspAttach",
