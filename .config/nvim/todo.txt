@@ -1,1 +1,4 @@
-<gq> does not format text
+1. Global find and replace
+2. DAP for unit testing
+3. Address Lazy update connection timeout @ 129900 ms
+4. Remove weird spade icon in the signcolumn and EOL

@@ -170,7 +170,7 @@ alias docs="cd ~/Documents/"
 alias proj="cd ~/projects/"
 alias fso="cd ~/projects/full-stack-open/"
 alias gai="cd ~/Documents/omscs/courses/gai/"
-alias gaipp="cd ~/Documents/omscs/courses/gai/GameAIPathPlanning/"
+alias gaipp="cd ~/Documents/omscs/courses/gai/GameAIPathPlanning/Assets/Scripts/GameAIStudentWork/"
 alias fonts="cd ~/.local/share/fonts/"
 
 # ================================================================
