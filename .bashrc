@@ -119,10 +119,11 @@ alias nw="nvim ~/.wezterm.lua"
 alias nconf="cd ~/.config/nvim/"
 
 # Tmux
-alias td="tmux detach"
-alias tls="tmux ls"
-alias tas="tmux attach-session"
-alias tks="tmux kill-session"
+alias tm="tmux"
+alias td="tm detach"
+alias tls="tm ls"
+alias tas="tm attach-session"
+alias tks="tm kill-session"
 
 # Program shortcuts
 alias nv="nvim"
@@ -132,8 +133,9 @@ alias pvc="protonvpn-cli"
 # npm 
 alias nrs="npm run start"
 alias nrd="npm run dev"
-alias nrb="npm run serve"
+alias nrb="npm run build"
 alias nrt="npm run test"
+alias nrv="npm run serve"
 
 # Commands
 alias rb="source ~/.bashrc"
@@ -149,10 +151,10 @@ alias g="git"
 alias ga="g add"
 alias gbr="g branch"
 alias gci="g commit"
-alias gco="git checkout"
+alias gco="g checkout"
 alias gcom="g checkout main"
 alias gcp="g cherry-pick"
-alias gdf="g diff"
+alias gdif="g diff"
 alias gft="g fetch"
 alias glg="g log"
 alias gpl="g pull"
@@ -170,7 +172,7 @@ alias docs="cd ~/Documents/"
 alias proj="cd ~/projects/"
 alias fso="cd ~/projects/full-stack-open/"
 alias gai="cd ~/Documents/omscs/courses/gai/"
-alias gaipp="cd ~/Documents/omscs/courses/gai/GameAIPathPlanning/Assets/Scripts/GameAIStudentWork/"
+alias gaipp="cd ~/Documents/omscs/courses/gai/GameAIPathPlanning/"
 alias fonts="cd ~/.local/share/fonts/"
 
 # ================================================================
