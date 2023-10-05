@@ -12,6 +12,21 @@ return {
 		local actions = require("telescope.actions")
 		local telescope = require("telescope")
 		telescope.setup({
+			pickers = {
+				find_files = {
+					hidden = true,
+				},
+				live_grep = {
+					additional_args = function()
+						return { "--hidden", "--glob", "!**/.git/*" }
+					end,
+				},
+				grep_string = {
+					additional_args = function()
+						return { "--hidden", "--glob", "!**/.git/*" }
+					end,
+				},
+			},
 			defaults = {
 				file_ignore_patterns = {
 					"node_modules",

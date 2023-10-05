@@ -171,8 +171,10 @@ alias down="cd ~/Downloads/"
 alias docs="cd ~/Documents/"
 alias proj="cd ~/projects/"
 alias fso="cd ~/projects/full-stack-open/"
+alias p4="cd ~/projects/full-stack-open/part4/"
 alias gai="cd ~/Documents/omscs/courses/gai/"
 alias gaipp="cd ~/Documents/omscs/courses/gai/GameAIPathPlanning/"
+alias gaipd="cd ~/Documents/omscs/courses/gai/GameAIPrisonDodgeBall/"
 alias fonts="cd ~/.local/share/fonts/"
 
 # ================================================================
