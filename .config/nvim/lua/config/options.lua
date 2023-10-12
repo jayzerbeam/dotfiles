@@ -18,7 +18,7 @@ opt.number = true
 opt.swapfile = false
 opt.relativenumber = true
 opt.shiftround = true
-opt.shiftwidth = 2
+opt.shiftwidth = 4
 opt.shortmess:append({ W = true, I = true, c = true })
 opt.showmode = false
 opt.signcolumn = "yes"
@@ -28,7 +28,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true
 opt.timeoutlen = 500
-opt.tabstop = 2
+opt.tabstop = 4
 opt.undofile = true
 opt.undolevels = 10000
 opt.wildmode = "longest:full,full"
