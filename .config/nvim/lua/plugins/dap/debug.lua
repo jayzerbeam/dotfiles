@@ -8,12 +8,8 @@ return {
 		"jay-babu/mason-nvim-dap.nvim",
 		"theHamsta/nvim-dap-virtual-text",
 		-- Useful status updates for LSP
-		-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-		-- { 'j-hui/fidget.nvim',       opts = {} },
-		-- Add your own debuggers here
 		"mxsdev/nvim-dap-vscode-js",
 		"microsoft/vscode-js-debug",
-		-- "firefox-devtools/vscode-firefox-debug",
 	},
 	config = function()
 		local dap = require("dap")
@@ -25,10 +21,8 @@ return {
 			automatic_setup = true,
 			handlers = {},
 			ensure_installed = {
-				-- 'netcoredbg',
 				"vscode-js-debug",
 				-- "bash-debug-adapter",
-				-- "vscode-firefox-debug",
 				"mxsdev/nvim-dap-vscode-js",
 			},
 		})
@@ -75,53 +69,6 @@ return {
 		dap.listeners.after.event_initialized["dapui_config"] = dapui.open
 		dap.listeners.before.event_terminated["dapui_config"] = dapui.close
 		dap.listeners.before.event_exited["dapui_config"] = dapui.close
-
-		-- DOTNET
-		-- dap.adapters.coreclr = {
-		--   type = 'executable',
-		--   command = os.getenv('HOME') .. '/.local/share/nvim/mason/packages/netcoredbg/netcoredbg',
-		--   args = { '--interpreter=vscode' }
-		-- }
-		--
-		-- dap.configurations.cs = {
-		--   {
-		--     type = "coreclr",
-		--     name = "launch - netcoredbg",
-		--     request = "launch",
-		--     program = function()
-		--       return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
-		--     end,
-		--   },
-		-- }
-		--
-		-- BASH
-		-- dap.adapters.bashdb = {
-		--   type = 'executable',
-		--   command = os.getenv('HOME') .. '.local/share/nvim/mason/packages/bash-debug-adapter/bash-debug-adapter',
-		--   name = 'bashdb',
-		-- }
-		-- dap.configurations.sh = {
-		--   {
-		--     type = 'bashdb',
-		--     request = 'launch',
-		--     name = "Launch file",
-		--     showDebugOutput = true,
-		--     pathBashdb = os.getenv('HOME') ..
-		--         '.local/share/nvim/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb',
-		--     pathBashdbLib = os.getenv('HOME') .. '.local/share/nvim/mason/packages/bash-debug-adapter/extension/bashdb_dir',
-		--     trace = true,
-		--     file = "${file}",
-		--     program = "${file}",
-		--     cwd = '${workspaceFolder}',
-		--     pathCat = "cat",
-		--     pathBash = "/bin/bash",
-		--     pathMkfifo = "mkfifo",
-		--     pathPkill = "pkill",
-		--     args = {},
-		--     env = {},
-		--     terminalKind = "integrated",
-		--   }
-		-- }
 
 		require("dap-vscode-js").setup({
 			adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
