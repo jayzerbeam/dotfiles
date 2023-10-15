@@ -215,7 +215,7 @@ if ! shopt -oq posix; then
     fi
 fi
 
-PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH:$HOME/.local/share/bob/nvim-bin"
 
 export N_PREFIX="$HOME/n"
 [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin" # Added by n-install (see http://git.io/n-install-repo).
@@ -234,3 +234,4 @@ export N_PREFIX="$HOME/n"
 #
 # Report bugs to martin.dvorak@mindforger.com
 # Home page: https://github.com/dvorka/hstr
+. "$HOME/.cargo/env"
