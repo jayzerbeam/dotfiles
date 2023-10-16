@@ -1,5 +1,9 @@
 return {
 	"folke/todo-comments.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
-	opts = {},
+	opts = {
+		highlight = {
+			multiline = false, -- enable multine todo comments
+		},
+	},
 }
