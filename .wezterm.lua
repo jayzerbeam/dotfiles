@@ -33,7 +33,7 @@ config.keys = {
 	-- standard
 	{ key = "b", mods = "LEADER|CTRL", action = act.SendKey({ key = "b", mods = "CTRL" }) },
 	{ key = "c", mods = "LEADER", action = act.ActivateCopyMode },
-	{ key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
+	{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
 	{ key = "s", mods = "LEADER", action = act.RotatePanes("Clockwise") },
 	{ key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
 	-- Panes
@@ -47,9 +47,9 @@ config.keys = {
 	-- Key tables
 	{ key = "r", mods = "LEADER", action = act.ActivateKeyTable({ name = "resize_pane", one_shot = false }) },
 	-- Tab keybindings
-	{ key = "n", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
-	{ key = "[", mods = "LEADER", action = act.ActivateTabRelative(-1) },
-	{ key = "]", mods = "LEADER", action = act.ActivateTabRelative(1) },
+	{ key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
+	{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
+	{ key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
 	{ key = "t", mods = "LEADER", action = act.ShowTabNavigator },
 	{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 }

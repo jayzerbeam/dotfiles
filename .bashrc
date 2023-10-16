@@ -141,10 +141,13 @@ alias nrv="npm run serve"
 alias rb="source ~/.bashrc"
 alias rt="tmux source ~/.tmux.conf"
 alias pbcopy="xclip -sel clip"
-alias x="exit"
+alias q="exit"
 alias hist="hstr"
 alias cl="clear"
 alias upg="sudo apt-get update && sudo apt-get upgrade"
+
+# Wezterm
+alias wt="wezterm"
 
 # Git shortcuts
 alias g="git"

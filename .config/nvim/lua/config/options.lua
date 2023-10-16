@@ -10,6 +10,7 @@ opt.backspace = "indent,eol,start"
 opt.clipboard = "unnamedplus"
 opt.completeopt = "menu,menuone,noselect,preview"
 opt.confirm = true
+opt.cursorcolumn = true
 opt.cursorline = true
 opt.expandtab = true
 opt.formatoptions = "jcroqlnt"
@@ -17,7 +18,6 @@ opt.ignorecase = true
 opt.number = true
 opt.swapfile = false
 opt.relativenumber = true
-opt.scrolloff = 999
 opt.shiftround = true
 opt.shiftwidth = 4
 opt.shortmess:append({ W = true, I = true, c = true })
