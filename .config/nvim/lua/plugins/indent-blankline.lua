@@ -23,7 +23,7 @@ return {
 		end)
 		require("ibl").setup({
 			indent = {
-				char = { "│" }, --, "|", "¦", "┆", "┊" },
+				char = { "│" },
 				highlight = highlight,
 			},
 		})
