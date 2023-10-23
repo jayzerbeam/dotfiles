@@ -22,6 +22,8 @@ return {
 				color = "fix",
 				alt = { "fix" },
 			},
+			-- mark:
+			MARK = { icon = " ", color = "mark", alt = { "mark" } },
 			-- note:
 			NOTE = { icon = " ", color = "note", alt = { "note" } },
 			-- perf:
@@ -42,6 +44,7 @@ return {
 			done = { "#A6E3A1" },
 			error = { "#F38BA8" },
 			fix = { "#F5C2E7" },
+			mark = { "#B4BEFE" },
 			note = { "#F9E2AF" },
 			perf = { "#94E2D5" },
 			test = { "#BAC2DE" },

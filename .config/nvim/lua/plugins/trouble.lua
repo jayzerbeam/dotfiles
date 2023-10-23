@@ -2,9 +2,11 @@ return {
 	"folke/trouble.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	opts = {
-		height = 12,
-		-- your configuration comes here
-		-- or leave it empty to use the default settings
-		-- refer to the configuration section below
+		height = 20,
+		position = "bottom",
+		action_keys = {
+			jump = { "o" },
+			jump_close = { "<cr>" },
+		},
 	},
 }

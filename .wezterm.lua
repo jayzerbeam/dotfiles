@@ -14,6 +14,7 @@ end
 config.audible_bell = "Disabled"
 config.color_scheme = "Catppuccin Mocha"
 config.default_workspace = "home"
+-- config.default_cursor_style = "BlinkingBlock"
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.inactive_pane_hsb = {

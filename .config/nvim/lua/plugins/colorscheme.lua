@@ -9,7 +9,7 @@ return {
 			},
 			dim_inactive = {
 				enabled = true,
-				percentage = 0.5,
+				percentage = 0.75,
 				shade = "dark",
 			},
 			flavour = "mocha",
