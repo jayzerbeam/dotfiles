@@ -20,7 +20,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- maximize window splits
 -- TABS
 keymap.set("n", "<leader>tc", ":tabnew<CR>") -- create new tab
 keymap.set("n", "<leader>tq", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<leader>tX", ":tabonly<CR>") -- close all but current tab
+keymap.set("n", "<leader>tQ", ":tabonly<CR>") -- close all but current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") -- next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") -- previous tab
 keymap.set("n", "<leader>tl", ":tabl<CR>") -- last tab
