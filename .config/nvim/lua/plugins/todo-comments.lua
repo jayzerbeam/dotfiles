@@ -8,7 +8,7 @@ return {
 			ERR = {
 				icon = " ",
 				color = "error",
-				alt = { "bug", "err", "error" },
+				alt = { "bug", "bugs", "error", "errors" },
 			},
 			-- done:
 			DONE = {
@@ -25,13 +25,13 @@ return {
 			-- mark:
 			MARK = { icon = " ", color = "mark", alt = { "mark" } },
 			-- note:
-			NOTE = { icon = " ", color = "note", alt = { "note" } },
+			NOTE = { icon = " ", color = "note", alt = { "note", "notes" } },
 			-- perf:
 			PERF = { icon = " ", color = "perf", alt = { "perf" } },
 			-- test:
-			TEST = { icon = " ", color = "test", alt = { "test" } },
+			TEST = { icon = " ", color = "test", alt = { "test", "tests" } },
 			-- todo:
-			TODO = { icon = " ", color = "todo", alt = { "todo" } },
+			TODO = { icon = " ", color = "todo", alt = { "todo", "todos" } },
 			-- warn:
 			WARN = { icon = " ", color = "fix", alt = { "warn" } },
 		},

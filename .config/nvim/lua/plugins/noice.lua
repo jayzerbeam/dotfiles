@@ -21,12 +21,19 @@ return {
 					{
 						require("noice").api.statusline.mode.get,
 						cond = require("noice").api.statusline.mode.has,
-						color = { fg = "#ff9e64" },
+						color = { fg = "#94E2D5" },
 					},
 				},
 			},
 		})
 		noice.setup({
+			cmdline = {
+				format = {
+					cmdline = { pattern = "^:", icon = " ", lang = "vim" },
+					search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
+					search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
+				},
+			},
 			lsp = {
 				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
 				override = {

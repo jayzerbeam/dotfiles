@@ -8,7 +8,8 @@ return {
 			options = {
 				diagnostics = "nvim_lsp",
 				mode = "tabs",
-				style_preset = bufferline.style_preset.minimal,
+				separator_style = "slant", --"slant" | "slope" | "thick" | "thin" | { 'any', 'any' },
+				style_preset = bufferline.style_preset.default,
 			},
 		})
 	end,
