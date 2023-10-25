@@ -8,6 +8,7 @@ end
 
 augroup("YankHighlight", { clear = true })
 
+-- Highlight on yank
 autocmd("TextYankPost", {
 	group = augroup("YankHighlight"),
 	callback = function()

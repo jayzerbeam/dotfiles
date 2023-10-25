@@ -14,12 +14,11 @@ opt.confirm = true
 opt.cursorline = true
 opt.expandtab = true
 opt.formatoptions = "jcroqlnt"
--- opt.guicursor = "a:blinkon1"
 opt.ignorecase = true
 opt.number = true
 opt.swapfile = false
 opt.relativenumber = true
-opt.scrolloff = 999
+opt.scrolloff = 4
 opt.shiftround = true
 opt.shiftwidth = 4
 opt.shortmess:append({ W = true, I = true, c = true })
