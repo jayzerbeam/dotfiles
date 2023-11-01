@@ -10,7 +10,7 @@ return {
 	},
 	config = function(_, opts)
 		local lspconfig = require("lspconfig")
-		local signs = { Error = "", Warn = "", Hint = "󰌶", Info = "󰋽" }
+		local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
 		for name, icon in pairs(signs) do
 			name = "DiagnosticSign" .. name
@@ -57,8 +57,12 @@ return {
 		lspconfig.clangd.setup({
 			capabilities = capabilities,
 		})
+		local util = require("lspconfig.util")
 		lspconfig.csharp_ls.setup({
-			capabilities = capabilities,
+			cmd = { "csharp-ls" },
+			-- will not work for unity!
+			root_dir = util.root_pattern("*.sln", "*.csproj", "*.fsproj", ".git"),
+			filetypes = { "cs" },
 			init_options = {
 				AutomaticWorkspaceInit = true,
 			},

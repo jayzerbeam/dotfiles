@@ -13,12 +13,20 @@ return {
 			enable_git_status = true,
 			enable_diagnostics = true,
 			popup_border_style = "rounded",
+			source_selector = {
+				statusline = true,
+				winbar = true,
+			},
+			-- sources = {
+			-- 	document_symbols = "",
+			-- },
 			default_component_configs = {
 				icon = {
 					folder_closed = "",
 					folder_open = "",
-					-- The next two settings are only a fallback, if you use nvim-web-devicons and configure default icons there
-					-- then these will never be used.
+					-- The next two settings are only a fallback, if you use
+					-- nvim-web-devicons and configure default icons there then
+					-- these will never be used.
 					default = "*",
 					highlight = "NeoTreeFileIcon",
 				},
@@ -40,12 +48,11 @@ return {
 					["<C-t>"] = "open_tabnew",
 				},
 				position = "float",
-				width = "25%",
 				-- settings that apply to float position only
 				popup = {
 					size = {
-						height = "80%",
-						width = "80%",
+						height = "75%",
+						width = "90%",
 					},
 				},
 			},

@@ -25,6 +25,8 @@ opt.shortmess:append({ W = true, I = true, c = true })
 opt.showmode = false
 opt.signcolumn = "yes"
 opt.smartcase = true
+opt.smartindent = true
+opt.softtabstop = 4
 opt.spelllang = { "en" }
 opt.splitbelow = true
 opt.splitright = true

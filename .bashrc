@@ -178,8 +178,7 @@ alias p4="cd ~/projects/full-stack-open/part4/"
 alias dyg="cd ~/Documents/dygma/"
 alias baze="cd ~/Documents/dygma/ && ./Bazecor-1.3.4-x64.AppImage"
 alias gai="cd ~/Documents/omscs/courses/gai/"
-alias gaipp="cd ~/Documents/omscs/courses/gai/GameAIPathPlanning/"
-alias gaipd="cd ~/Documents/omscs/courses/gai/GameAIPrisonDodgeBall/"
+alias grt="cd ~/Documents/omscs/courses/gai/GameAIRaceTrack/"
 alias fonts="cd ~/.local/share/fonts/"
 
 # ================================================================
