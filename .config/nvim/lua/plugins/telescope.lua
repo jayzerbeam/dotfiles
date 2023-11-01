@@ -1,6 +1,6 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "0.1.2",
+	tag = "0.1.4",
 	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
 		{ "BurntSushi/ripgrep" },
@@ -31,21 +31,23 @@ return {
 			defaults = {
 				file_ignore_patterns = {
 					"node_modules",
+					"build",
+					"dist",
 				},
 				layout_strategy = "horizontal",
 				layout_config = {
 					horizontal = {
-						height = 0.80,
+						height = 0.9,
 						preview_width = 0.6,
 						prompt_position = "top",
-						width = 0.80,
+						width = 0.9,
 					},
 					vertical = {
-						height = 0.8,
+						height = 0.9,
 						mirror = true,
 						preview_height = 0.6,
 						prompt_position = "top",
-						width = 0.8,
+						width = 0.9,
 					},
 				},
 				mappings = {

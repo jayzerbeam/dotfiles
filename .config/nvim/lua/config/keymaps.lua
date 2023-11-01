@@ -26,8 +26,22 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>") -- previous tab
 keymap.set("n", "<leader>tl", "<cmd>tabl<CR>") -- last tab
 keymap.set("n", "<leader>tf", "<cmd>tabfir<CR>") -- first tab
 
--- diagnostics
-keymap.set("n", "<leader>di", vim.diagnostic.open_float) -- show diagnostic
+-- buffers
+keymap.set("n", "<leader>bc", "<cmd>enew<CR>")
+keymap.set("n", "<leader>bn", "<cmd>bnext<CR>")
+keymap.set("n", "<leader>bp", "<cmd>bprev<CR>")
+keymap.set("n", "<leader>bl", "<cmd>blast<CR>")
+keymap.set("n", "<leader>bf", "<cmd>bfirst<CR>")
+keymap.set("n", "<leader>bq", "<cmd>bdelete<CR>")
+
+-- Lspsaga
+keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap.set("n", "<leader>gd", "<cmd>Lspsaga goto_definition<CR>")
+keymap.set("n", "<leader>gD", "<cmd>Lspsaga goto_type_definition<CR>")
+keymap.set("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>")
+keymap.set("n", "<leader>pt", "<cmd>Lspsaga peek_type_definition<CR>")
+keymap.set("n", "<leader>dp", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
+keymap.set("n", "<leader>dn", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 -- NeoTree
 keymap.set("n", "<leader>fe", "<cmd>Neotree toggle<CR>")

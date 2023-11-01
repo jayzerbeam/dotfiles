@@ -1,12 +1,12 @@
 return {
 	"hrsh7th/nvim-cmp",
 	dependencies = {
-		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
-		"hrsh7th/cmp-path",
-		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-calc",
+		"hrsh7th/cmp-cmdline",
+		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-nvim-lsp-signature-help",
+		"hrsh7th/cmp-path",
 		"lukas-reineke/cmp-rg",
 	},
 	config = function()
@@ -30,18 +30,19 @@ return {
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp_signature_help" },
-				{ name = "nvim_lsp" }, -- lsp
-				{ name = "luasnip" }, -- snippets
 				{ name = "buffer", keyword_length = 5 }, -- text within current buffer
-				{ name = "path" }, -- file system paths
 				{ name = "calc" },
+				{ name = "luasnip" }, -- snippets
+				{ name = "nvim_lsp" }, -- lsp
+				{ name = "nvim_lsp_signature_help" },
+				{ name = "path" }, -- file system paths
 				{ name = "rg", keyword_length = 5 },
 			}),
 			-- configure lspkind for vs-code like icons
 			formatting = {
 				format = lspkind.cmp_format({
 					maxwidth = 50,
+					mode = "symbol",
 					ellipsis_char = "...",
 				}),
 			},
