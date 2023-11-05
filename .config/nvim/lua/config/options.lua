@@ -2,9 +2,6 @@
 
 local opt = vim.opt
 
-opt.autoindent = true
-opt.background = "dark"
-opt.backspace = "indent,eol,start"
 opt.clipboard = "unnamedplus"
 opt.completeopt = "menu,menuone,noselect,preview"
 opt.confirm = true
@@ -29,7 +26,6 @@ opt.spelllang = { "en" }
 opt.splitbelow = true
 opt.splitright = true
 opt.termguicolors = true
-opt.timeoutlen = 500
 opt.tabstop = 4
 opt.undofile = true
 opt.undolevels = 10000
