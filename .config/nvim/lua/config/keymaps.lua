@@ -35,9 +35,13 @@ keymap.set("n", "<leader>bf", "<cmd>bfirst<CR>")
 keymap.set("n", "<leader>bq", "<cmd>bdelete<CR>")
 
 -- Lspsaga
+keymap.set("n", "<leader>dc", "<cmd>Lspsaga hover_doc<CR>")
+keymap.set("n", "<leader>ol", "<cmd>Lspsaga outline<CR>")
 keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap.set("n", "<leader>rp", "<cmd>Lspsaga project_replace<CR>")
+keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>")
 keymap.set("n", "<leader>gd", "<cmd>Lspsaga goto_definition<CR>")
-keymap.set("n", "<leader>gD", "<cmd>Lspsaga goto_type_definition<CR>")
+keymap.set("n", "<leader>gt", "<cmd>Lspsaga goto_type_definition<CR>")
 keymap.set("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>")
 keymap.set("n", "<leader>pt", "<cmd>Lspsaga peek_type_definition<CR>")
 keymap.set("n", "<leader>dp", "<cmd>Lspsaga diagnostic_jump_prev<CR>")
@@ -54,8 +58,6 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 keymap.set("n", "<leader>ft", "<cmd>Telescope help_tags<CR>")
 keymap.set("n", "<leader>fm", "<cmd>Telescope marks<CR>")
 
--- Todo
+-- Todo & Trouble
 keymap.set("n", "<leader>do", "<cmd>TodoTrouble<CR>")
-
--- Trouble
 keymap.set("n", "<leader>tr", "<cmd>TroubleToggle<CR>")

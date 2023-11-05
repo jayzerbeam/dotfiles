@@ -1,3 +1,1 @@
-- Global find and replace
 - DAP for unit testing
-- Remove weird spade icon in the signcolumn and EOL
