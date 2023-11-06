@@ -22,46 +22,29 @@ return {
 			handlers = {},
 			ensure_installed = {
 				"vscode-js-debug",
-				-- "bash-debug-adapter",
 				"mxsdev/nvim-dap-vscode-js",
 			},
 		})
-
-		-- You can provide additional configuration to the handlers,
 		-- see mason-nvim-dap README for more information
 		require("nvim-dap-virtual-text").setup({})
-		-- Basic debugging keymaps, feel free to change to your liking!
-		vim.keymap.set("n", "<F5>", dap.continue)
-		vim.keymap.set("n", "<F1>", dap.step_into)
-		vim.keymap.set("n", "<F2>", dap.step_over)
-		vim.keymap.set("n", "<F3>", dap.step_out)
-		vim.keymap.set(
-			"n",
-			"<leader>lp",
-			":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>"
-		)
-		vim.keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
-		vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint)
-		vim.keymap.set("n", "<leader>B", function()
-			dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-		end)
-
-		-- Dap UI setup
+		vim.fn.sign_define("DapBreakpoint", { text = " ", texthl = "", linehl = "", numhl = "" })
+		vim.fn.sign_define("DapCondition", { text = " ", texthl = "", linehl = "", numhl = "" })
+		vim.fn.sign_define("DapLogPoint", { text = " ", texthl = "", linehl = "", numhl = "" })
+		vim.fn.sign_define("DapStopped", { text = " ", texthl = "", linehl = "", numhl = "" })
+		vim.fn.sign_define("DapBreakpointRejected", { text = " ", texthl = "", linehl = "", numhl = "" })
 		-- For more information, see |:help nvim-dap-ui|
 		dapui.setup({
-			-- Set icons to characters that are more likely to work in every terminal.
-			-- Feel free to remove or use ones that you like more! :)
-			icons = { expanded = "▾", collapsed = "▸", current_frame = "*" },
 			controls = {
 				icons = {
-					pause = "",
-					play = "",
-					step_into = "",
-					step_over = "",
-					step_out = "",
-					step_back = "",
-					run_last = "↻",
-					terminate = "□",
+					disconnect = "",
+					pause = "",
+					play = "",
+					step_into = "",
+					step_over = "",
+					step_out = "",
+					step_back = "",
+					run_last = "",
+					terminate = "",
 				},
 			},
 		})
