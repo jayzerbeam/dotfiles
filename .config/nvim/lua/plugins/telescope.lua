@@ -30,9 +30,13 @@ return {
 			},
 			defaults = {
 				file_ignore_patterns = {
-					"node_modules",
 					"build",
 					"dist",
+					".git",
+					"node_modules",
+					".npm",
+					".tsbuildinfo",
+					".stylelintcache",
 				},
 				layout_strategy = "horizontal",
 				layout_config = {

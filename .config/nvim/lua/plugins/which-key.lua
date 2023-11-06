@@ -2,6 +2,7 @@ return {
 	"folke/which-key.nvim",
 	config = function()
 		local wk = require("which-key")
+		local dap = require("dap")
 		vim.o.timeout = true
 		vim.o.timeoutlen = 1000
 		-- show the effects of a search / replace in a live preview window
@@ -31,11 +32,6 @@ return {
 				p = { "<cmd>bprev<CR>", "Previous Buffer" },
 				q = { "<cmd>bdelete<CR>", "Delete Buffer" },
 			},
-			d = {
-				name = "Trouble",
-				o = { "<cmd>TodoTrouble<CR>", "To-Do List" },
-				t = { "<cmd>TroubleToggle<CR>", "Trouble Toggle" },
-			},
 			f = {
 				name = "Telescope",
 				b = { "<cmd>Telescope buffers<CR>", "Find Buffers" },
@@ -45,9 +41,28 @@ return {
 				s = { "<cmd>Telescope grep_string<CR>", "Grep String" },
 				t = { "<cmd>Telescope help_tags<CR>", "Find Tags" },
 			},
+			d = {
+				name = "DAP",
+				["<F1>"] = { dap.step_into, "Step Into" },
+				["<F2>"] = { dap.step_over, "Step Over" },
+				["<F3>"] = { dap.step_out, "Step Out" },
+				["<F4>"] = { dap.continue, "Continue" },
+				b = { dap.toggle_breakpoint, "Toggle Breakpoint" },
+				l = {
+					":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+					"Log Point Message",
+				},
+				r = { ":lua require'dap'.repl.open()<CR>", "Open REPL" },
+				B = {
+					function()
+						dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+					end,
+					"Set Breakpoint Condition",
+				},
+			},
 			h = {
 				name = "Highlights",
-				o = { "<cmd>nohl<CR>", "Clear Highlights" },
+				l = { "<cmd>nohl<CR>", "Clear Highlights" },
 			},
 			l = {
 				name = "Lspsaga",
@@ -76,6 +91,11 @@ return {
 				name = "NeoTree",
 				t = { "<cmd>Neotree toggle<CR>", "File Explorer" },
 			},
+			o = {
+				name = "Trouble",
+				o = { "<cmd>TodoTrouble<CR>", "To-Do List" },
+				t = { "<cmd>TroubleToggle<CR>", "Trouble Toggle" },
+			},
 			r = {
 				name = "Search and Replace: Single Buffer", -- optional group name
 				s = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "[s]election list" },
@@ -97,14 +117,6 @@ return {
 					f = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" },
 				},
 			},
-			s = {
-				name = "Window Splits",
-				q = { "<cmd>close<CR>", "Close Current Split" },
-				e = { "<C-w>=", "Equalize Splits" },
-				h = { "<C-w>s", "Horizontal Split" },
-				m = { "<cmd>MaximizerToggle<CR>", "Maximize Splits" },
-				v = { "<C-w>v", "Vertical Split" },
-			},
 			t = {
 				name = "Tabs",
 				Q = { "<cmd>tabonly<CR>", "Close All Other Tabs" },
@@ -114,6 +126,14 @@ return {
 				c = { "<cmd>tabnew<CR>", "New Tab" },
 				n = { "<cmd>tabn<CR>", "Next Tab" },
 				p = { "<cmd>tabp<CR>", "Previous Tab" },
+			},
+			w = {
+				name = "Window Splits",
+				q = { "<cmd>close<CR>", "Close Current Split" },
+				e = { "<C-w>=", "Equalize Splits" },
+				h = { "<C-w>s", "Horizontal Split" },
+				m = { "<cmd>MaximizerToggle<CR>", "Maximize Splits" },
+				v = { "<C-w>v", "Vertical Split" },
 			},
 		}, { prefix = "<leader>" })
 	end,
