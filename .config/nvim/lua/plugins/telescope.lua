@@ -8,6 +8,16 @@ return {
 		{ "nvim-treesitter/nvim-treesitter" },
 		{ "nvim-tree/nvim-web-devicons", lazy = true },
 	},
+	opts = {
+		extensions = {
+			fzf = {
+				fuzzy = true,
+				override_generic_sorter = true,
+				override_file_sorter = true,
+				case_mode = "smart_case",
+			},
+		},
+	},
 	config = function()
 		local actions = require("telescope.actions")
 		local telescope = require("telescope")
@@ -32,11 +42,33 @@ return {
 				file_ignore_patterns = {
 					"build",
 					"dist",
-					".git",
 					"node_modules",
+					"Logs",
+					".git",
+					".vscode",
 					".npm",
 					".tsbuildinfo",
 					".stylelintcache",
+					".jpeg",
+					".jpg",
+					".png",
+					".pdf",
+					-- fonts
+					".ttf",
+					".otf",
+					-- unity
+					"Library",
+					".meta",
+					".pdb",
+					".asset",
+					".dwlt",
+					".unity",
+					".settings",
+					".lighting",
+					".asmdef",
+					".cginc",
+					".bhc",
+					".dll",
 				},
 				layout_strategy = "horizontal",
 				layout_config = {

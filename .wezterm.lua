@@ -1,7 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 local act = wezterm.action
-
 local config = {}
 
 -- In newer versions of wezterm, use the config_builder which will

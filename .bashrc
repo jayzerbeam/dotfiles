@@ -112,6 +112,7 @@ fi
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 
 # Dotfiles
+alias nbt="nvim ~/.config/btop/btop.conf"
 alias nb="nvim ~/.bashrc"
 alias nt="nvim ~/.tmux.conf"
 alias ng="nvim ~/.gitconfig"
@@ -146,9 +147,6 @@ alias hist="hstr"
 alias cl="clear"
 alias upg="sudo apt-get update && sudo apt-get upgrade"
 
-# Wezterm
-alias wt="wezterm"
-
 # Git shortcuts
 alias g="git"
 alias ga="g add"
@@ -177,8 +175,9 @@ alias fso="cd ~/projects/full-stack-open/"
 alias p4="cd ~/projects/full-stack-open/part4/"
 alias dyg="cd ~/Documents/dygma/"
 alias baze="cd ~/Documents/dygma/ && ./Bazecor-1.3.4-x64.AppImage"
+alias cn="cd ~/Documents/omscs/courses/cn/"
 alias gai="cd ~/Documents/omscs/courses/gai/"
-alias grt="cd ~/Documents/omscs/courses/gai/GameAIRaceTrack/"
+alias gpcg="cd ~/Documents/omscs/courses/gai/GameAI_PCG/"
 alias fonts="cd ~/.local/share/fonts/"
 
 # ================================================================
@@ -237,3 +236,7 @@ export N_PREFIX="$HOME/n"
 # Report bugs to martin.dvorak@mindforger.com
 # Home page: https://github.com/dvorka/hstr
 . "$HOME/.cargo/env"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH

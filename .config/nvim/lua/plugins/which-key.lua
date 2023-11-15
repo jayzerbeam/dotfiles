@@ -13,41 +13,44 @@ return {
 				position = "top", -- bottom, top
 			},
 			layout = {
-				height = { min = 20, max = 50 }, -- min and max height of the columns
-				width = { min = 20, max = 50 }, -- min and max width of the columns
+				height = { min = 25, max = 50 }, -- min and max height of the columns
+				width = { min = 25, max = 50 }, -- min and max width of the columns
 			},
 		})
-		-- todo: Visual Mode Keymaps
-		-- lvim.keys.visual_block_mode["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]]
-		-- lvim.keys.visual_block_mode["<C-s>"] = [[<CMD>SearchReplaceWithinVisualSelection<CR>]]
-		-- lvim.keys.visual_block_mode["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]]
 		wk.register({
 			mode = "n",
-			b = {
-				name = "Buffers",
-				c = { "<cmd>enew<CR>", "New Buffer" },
-				f = { "<cmd>bfirst<CR>", "First Buffer" },
-				l = { "<cmd>blast<CR>", "Last Buffer" },
-				n = { "<cmd>bnext<CR>", "Next Buffer" },
-				p = { "<cmd>bprev<CR>", "Previous Buffer" },
-				q = { "<cmd>bdelete<CR>", "Delete Buffer" },
-			},
-			f = {
-				name = "Telescope",
-				b = { "<cmd>Telescope buffers<CR>", "Find Buffers" },
-				f = { "<cmd>Telescope find_files<CR>", "Find Files" },
-				m = { "<cmd>Telescope marks<CR>", "Find Marks" },
-				r = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
-				s = { "<cmd>Telescope grep_string<CR>", "Grep String" },
-				t = { "<cmd>Telescope help_tags<CR>", "Find Tags" },
-			},
 			d = {
 				name = "DAP",
-				["<F1>"] = { dap.step_into, "Step Into" },
-				["<F2>"] = { dap.step_over, "Step Over" },
-				["<F3>"] = { dap.step_out, "Step Out" },
-				["<F4>"] = { dap.continue, "Continue" },
-				b = { dap.toggle_breakpoint, "Toggle Breakpoint" },
+				["<F1>"] = {
+					function()
+						dap.step_into()
+					end,
+					"Step Into",
+				},
+				["<F2>"] = {
+					function()
+						dap.step_over()
+					end,
+					"Step Over",
+				},
+				["<F3>"] = {
+					function()
+						dap.step_out()
+					end,
+					"Step Out",
+				},
+				["<F4>"] = {
+					function()
+						dap.continue()
+					end,
+					"Continue",
+				},
+				b = {
+					function()
+						dap.toggle_breakpoint()
+					end,
+					"Toggle Breakpoint",
+				},
 				l = {
 					":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
 					"Log Point Message",
@@ -60,9 +63,14 @@ return {
 					"Set Breakpoint Condition",
 				},
 			},
-			h = {
-				name = "Highlights",
-				l = { "<cmd>nohl<CR>", "Clear Highlights" },
+			f = {
+				name = "Telescope",
+				b = { "<cmd>Telescope buffers<CR>", "Find Buffers" },
+				f = { "<cmd>Telescope find_files<CR>", "Find Files" },
+				m = { "<cmd>Telescope marks<CR>", "Find Marks" },
+				r = { "<cmd>Telescope live_grep<CR>", "Live Grep" },
+				s = { "<cmd>Telescope grep_string<CR>", "Grep String" },
+				t = { "<cmd>Telescope help_tags<CR>", "Find Tags" },
 			},
 			l = {
 				name = "Lspsaga",
@@ -96,8 +104,12 @@ return {
 				o = { "<cmd>TodoTrouble<CR>", "To-Do List" },
 				t = { "<cmd>TroubleToggle<CR>", "Trouble Toggle" },
 			},
+			-- todo: Visual Mode Keymaps
+			-- lvim.keys.visual_block_mode["<C-r>"] = [[<CMD>SearchReplaceSingleBufferVisualSelection<CR>]]
+			-- lvim.keys.visual_block_mode["<C-s>"] = [[<CMD>SearchReplaceWithinVisualSelection<CR>]]
+			-- lvim.keys.visual_block_mode["<C-b>"] = [[<CMD>SearchReplaceWithinVisualSelectionCWord<CR>]]
 			r = {
-				name = "Search and Replace: Single Buffer", -- optional group name
+				name = "Search and Replace", -- optional group name
 				s = { "<CMD>SearchReplaceSingleBufferSelections<CR>", "[s]election list" },
 				o = { "<CMD>SearchReplaceSingleBufferOpen<CR>", "[o]pen" },
 				w = { "<CMD>SearchReplaceSingleBufferCWord<CR>", "[w]ord" },
@@ -105,7 +117,7 @@ return {
 				e = { "<CMD>SearchReplaceSingleBufferCExpr<CR>", "[e]xpr" },
 				f = { "<CMD>SearchReplaceSingleBufferCFile<CR>", "[f]ile" },
 				b = {
-					name = "Search and Replace: Multi Buffer",
+					name = "Multiple Buffer Search",
 					s = {
 						"<CMD>SearchReplaceMultiBufferSelections<CR>",
 						"[s]election list",
@@ -117,23 +129,41 @@ return {
 					f = { "<CMD>SearchReplaceMultiBufferCFile<CR>", "[f]ile" },
 				},
 			},
-			t = {
-				name = "Tabs",
-				Q = { "<cmd>tabonly<CR>", "Close All Other Tabs" },
-				q = { "<cmd>tabclose<CR>", "Close Tab" },
-				f = { "<cmd>tabfir<CR>", "First Tab" },
-				l = { "<cmd>tabl<CR>", "Last Tab" },
-				c = { "<cmd>tabnew<CR>", "New Tab" },
-				n = { "<cmd>tabn<CR>", "Next Tab" },
-				p = { "<cmd>tabp<CR>", "Previous Tab" },
-			},
-			w = {
-				name = "Window Splits",
-				q = { "<cmd>close<CR>", "Close Current Split" },
-				e = { "<C-w>=", "Equalize Splits" },
-				h = { "<C-w>s", "Horizontal Split" },
-				m = { "<cmd>MaximizerToggle<CR>", "Maximize Splits" },
-				v = { "<C-w>v", "Vertical Split" },
+			-- could group these together as "UI" or "Editor" or "View" or
+			-- "Windows" etc.
+			e = {
+				name = "Editor",
+				b = {
+					name = "Buffers",
+					c = { "<cmd>enew<CR>", "Create Buffer" },
+					f = { "<cmd>bfirst<CR>", "First Buffer" },
+					l = { "<cmd>blast<CR>", "Last Buffer" },
+					n = { "<cmd>bnext<CR>", "Next Buffer" },
+					p = { "<cmd>bprev<CR>", "Previous Buffer" },
+					q = { "<cmd>bdelete<CR>", "Delete Buffer" },
+				},
+				h = {
+					name = "Highlights",
+					l = { "<cmd>nohl<CR>", "Clear Highlights" },
+				},
+				t = {
+					name = "Tabs",
+					c = { "<cmd>tabnew<CR>", "Create Tab" },
+					f = { "<cmd>tabfir<CR>", "First Tab" },
+					l = { "<cmd>tabl<CR>", "Last Tab" },
+					n = { "<cmd>tabn<CR>", "Next Tab" },
+					p = { "<cmd>tabp<CR>", "Previous Tab" },
+					q = { "<cmd>tabclose<CR>", "Quit Tab" },
+					Q = { "<cmd>tabonly<CR>", "Quit All Other Tabs" },
+				},
+				s = {
+					name = "Splits",
+					e = { "<C-w>=", "Equalize Splits" },
+					h = { "<C-w>s", "Horizontal Split" },
+					m = { "<cmd>MaximizerToggle<CR>", "Maximize Splits" },
+					q = { "<cmd>close<CR>", "Quit Current Split" },
+					v = { "<C-w>v", "Vertical Split" },
+				},
 			},
 		}, { prefix = "<leader>" })
 	end,
