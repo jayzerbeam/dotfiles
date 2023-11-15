@@ -17,7 +17,7 @@ return {
 			vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
 		end
 
-		vim.diagnostic.config({ virtual_text = false })
+		vim.diagnostic.config({ virtual_text = true })
 		vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
 		local capabilities = vim.tbl_deep_extend(
@@ -49,6 +49,30 @@ return {
 				},
 			},
 		})
+		local util = require("lspconfig.util")
+		local function get_typescript_server_path(root_dir)
+			local global_ts = "/home/jasonlong/n/lib/node_modules/typescript/lib"
+			local found_ts = ""
+			local function check_dir(path)
+				found_ts = util.path.join(path, "node_modules", "typescript", "lib")
+				if util.path.exists(found_ts) then
+					return path
+				end
+			end
+			if util.search_ancestors(root_dir, check_dir) then
+				return found_ts
+			else
+				return global_ts
+			end
+		end
+		lspconfig.volar.setup({
+			on_new_config = function(new_config, new_root_dir)
+				new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+			end,
+		})
+		lspconfig.pyright.setup({
+			capabilities = capabilities,
+		})
 		lspconfig.tsserver.setup({
 			server = {
 				capabilities = capabilities,
@@ -69,34 +93,9 @@ return {
 		})
 		lspconfig.cssls.setup({
 			capabilities = capabilities,
-			filetypes = {
-				"css",
-				"scss",
-			},
-			settings = {
-				css = {
-					validate = true,
-				},
-				less = {
-					validate = true,
-				},
-				scss = {
-					validate = true,
-				},
-			},
 		})
 		lspconfig.html.setup({
 			capabilities = capabilities,
-			filetypes = { "html" },
-			init_options = {
-				configurationSection = { "html" },
-				embeddedLanguages = {
-					css = false,
-					javascript = false,
-				},
-				provideFormatter = false,
-			},
-			settings = {},
 		})
 		lspconfig.jsonls.setup({
 			capabilities = capabilities,

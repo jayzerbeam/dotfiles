@@ -11,11 +11,13 @@ return {
 		mason.setup({
 			ui = {
 				border = "rounded",
+				height = 0.8,
 				icons = {
 					package_installed = "✓",
 					package_pending = "➜",
 					package_uninstalled = "✗",
 				},
+				width = 0.8,
 			},
 		})
 		mason_lspconfig.setup({
@@ -26,13 +28,16 @@ return {
 				"jsonls",
 				"stylelint_lsp",
 				"lua_ls",
+				"pyright",
 				"tailwindcss",
 				"tsserver",
+				"volar",
 			},
 			automatic_installation = true,
 		})
 		mason_null_ls.setup({
 			ensure_installed = {
+				"black", -- python formatter
 				"csharpier", -- csharp formatter
 				"prettier", -- ts/js formatter
 				"stylua", -- lua formatter
