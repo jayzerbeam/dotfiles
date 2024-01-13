@@ -130,6 +130,7 @@ alias tks="tm kill-session"
 alias nv="nvim"
 alias dn="dotnet"
 alias pvc="protonvpn-cli"
+alias py="python"
 
 # npm 
 alias nrs="npm run start"
@@ -145,7 +146,7 @@ alias pbcopy="xclip -sel clip"
 alias q="exit"
 alias hist="hstr"
 alias cl="clear"
-alias upg="sudo apt-get update && sudo apt-get upgrade"
+alias upg="sudo apt update && sudo apt upgrade"
 
 # Git shortcuts
 alias g="git"
@@ -170,14 +171,12 @@ alias gsts="g status --short"
 alias desk="cd ~/Desktop/"
 alias down="cd ~/Downloads/"
 alias docs="cd ~/Documents/"
-alias proj="cd ~/projects/"
-alias fso="cd ~/projects/full-stack-open/"
-alias p4="cd ~/projects/full-stack-open/part4/"
+alias proj="cd ~/Projects/"
+alias fso="cd ~/Projects/full-stack-open/"
+alias nc="cd ~/Projects/neetcode/"
 alias dyg="cd ~/Documents/dygma/"
-alias baze="cd ~/Documents/dygma/ && ./Bazecor-1.3.4-x64.AppImage"
-alias cn="cd ~/Documents/omscs/courses/cn/"
-alias gai="cd ~/Documents/omscs/courses/gai/"
-alias gpcg="cd ~/Documents/omscs/courses/gai/GameAI_PCG/"
+alias cn="cd ~/Projects/cn_cs6250/"
+alias stp="cd ~/Projects/cn_cs6250/projects/1_spanning_tree_algo/SpanningTree"
 alias fonts="cd ~/.local/share/fonts/"
 
 # ================================================================
@@ -236,6 +235,12 @@ export N_PREFIX="$HOME/n"
 # Report bugs to martin.dvorak@mindforger.com
 # Home page: https://github.com/dvorka/hstr
 . "$HOME/.cargo/env"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
