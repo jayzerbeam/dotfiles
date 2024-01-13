@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	version = "*",
 	opts = {
-		size = 30,
+		size = 20,
 		direction = "horizontal",
 		open_mapping = "<C-t>",
 		shade_terminals = true,

@@ -1,19 +1,27 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
 
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
--- config.default_prog = { "tmux" }
 config.audible_bell = "Disabled"
+-- config.background = {
+-- 	{
+-- 		hsb = {
+-- 			brightness = 0.015,
+-- 			hue = 0.1,
+-- 			saturation = 0.1,
+-- 		},
+-- 		opacity = 1.0,
+-- 		source = {
+-- 			File = "./Pictures/Wallpaper/makima.jpg",
+-- 		},
+-- 	},
+-- }
 config.color_scheme = "Catppuccin Mocha"
 config.default_workspace = "home"
--- config.default_cursor_style = "BlinkingBlock"
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.inactive_pane_hsb = {
@@ -25,7 +33,7 @@ config.font = wezterm.font_with_fallback({
 	{ family = "MonoLisa Custom Nerd Font", weight = "Regular" },
 })
 config.font_size = 15
-config.scrollback_lines = 5000
+config.scrollback_lines = 10000
 config.use_fancy_tab_bar = false
 -- keys
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }

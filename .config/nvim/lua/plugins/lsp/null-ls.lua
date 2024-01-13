@@ -14,7 +14,6 @@ return {
 				formatting.csharpier, -- c# formatter
 				formatting.prettier, -- js/ts formatter
 				formatting.stylua, -- lua formatter
-				diagnostics.ruff, -- python linter
 				diagnostics.eslint_d.with({ -- js/ts linter
 					condition = function(utils)
 						return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
