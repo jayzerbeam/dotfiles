@@ -21,25 +21,25 @@ return {
 			mode = "n",
 			d = {
 				name = "DAP",
-				["<F1>"] = {
+				i = {
 					function()
 						dap.step_into()
 					end,
 					"Step Into",
 				},
-				["<F2>"] = {
+				j = {
 					function()
 						dap.step_over()
 					end,
 					"Step Over",
 				},
-				["<F3>"] = {
+				o = {
 					function()
 						dap.step_out()
 					end,
 					"Step Out",
 				},
-				["<F4>"] = {
+				c = {
 					function()
 						dap.continue()
 					end,
