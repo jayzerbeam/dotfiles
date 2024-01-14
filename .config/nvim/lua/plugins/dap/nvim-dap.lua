@@ -9,25 +9,51 @@ return {
 		"theHamsta/nvim-dap-virtual-text",
 		-- Adapters
 		"mxsdev/nvim-dap-vscode-js",
+		"mfussenegger/nvim-dap-python",
 		"microsoft/vscode-js-debug",
+		"microsoft/debugpy",
 	},
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")
 
-		-- For more information, see |:help nvim-dap-ui|
 		dapui.setup({
-			controls = {
-				icons = {
-					disconnect = "",
-					pause = "",
-					play = "",
-					step_into = "",
-					step_over = "",
-					step_out = "",
-					step_back = "",
-					run_last = "",
-					terminate = "",
+			layouts = {
+				{
+					elements = {
+						{
+							id = "scopes",
+							size = 0.25,
+						},
+						{
+							id = "breakpoints",
+							size = 0.25,
+						},
+						{
+							id = "stacks",
+							size = 0.25,
+						},
+						{
+							id = "watches",
+							size = 0.25,
+						},
+					},
+					position = "left",
+					size = 70,
+				},
+				{
+					elements = {
+						{
+							id = "repl",
+							size = 0.5,
+						},
+						{
+							id = "console",
+							size = 0.5,
+						},
+					},
+					position = "bottom",
+					size = 18,
 				},
 			},
 		})
@@ -53,8 +79,11 @@ return {
 			automatic_setup = true,
 			handlers = {},
 			ensure_installed = {
+				-- js
 				"mxsdev/nvim-dap-vscode-js",
 				"microsoft/vscode-js-debug",
+				-- python
+				"microsoft/debugpy",
 			},
 		})
 
@@ -112,5 +141,6 @@ return {
 		end
 
 		-- Python Setup
+		require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
 	end,
 }
