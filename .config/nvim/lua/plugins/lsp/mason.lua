@@ -21,6 +21,7 @@ return {
 			},
 		})
 		mason_lspconfig.setup({
+			-- language servers
 			ensure_installed = {
 				"clangd",
 				"cssls",
@@ -36,11 +37,13 @@ return {
 			automatic_installation = true,
 		})
 		mason_null_ls.setup({
+			-- linters/formatters
 			ensure_installed = {
 				"black", -- python formatter
 				"csharpier", -- csharp formatter
 				"prettier", -- ts/js formatter
 				"stylua", -- lua formatter
+				"stylelint", -- css linter
 				"eslint_d", -- ts/js linter
 			},
 			automatic_installation = true,
