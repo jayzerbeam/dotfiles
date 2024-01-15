@@ -3,9 +3,16 @@ return {
 	event = "VeryLazy",
 	version = "*",
 	opts = {
-		size = 20,
 		direction = "horizontal",
+		float_opts = {
+			border = "single",
+		},
 		open_mapping = "<C-t>",
-		shade_terminals = true,
+		shade_terminals = false,
+		size = function(term)
+			if term.direction == "horizontal" then
+				return vim.o.lines * 0.4
+			end
+		end,
 	},
 }

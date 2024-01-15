@@ -36,7 +36,7 @@ return {
 			WARN = { icon = " ", color = "fix", alt = { "warn" } },
 		},
 		highlight = {
-			multiline = false, -- enable multine todo comments
+			multiline = true, -- enable multine todo comments
 		},
 		-- list of named colors where we try to extract the guifg from the
 		-- list of highlight groups or use the hex color if hl not found as a fallback
