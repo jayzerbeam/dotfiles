@@ -1,7 +1,8 @@
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 return {
-	"jose-elias-alvarez/null-ls.nvim",
+	-- Note that null-ls is archived, but the API is the same.
+	"nvimtools/none-ls.nvim",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		local null_ls = require("null-ls")
@@ -10,15 +11,17 @@ return {
 
 		null_ls.setup({
 			sources = {
-				formatting.black, -- python formatter
-				formatting.csharpier, -- c# formatter
-				formatting.prettier, -- js/ts formatter
-				formatting.stylua, -- lua formatter
 				diagnostics.eslint_d.with({ -- js/ts linter
 					condition = function(utils)
 						return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
 					end,
 				}),
+				diagnostics.stylelint, -- CSS linter
+				formatting.black, -- python formatter
+				formatting.csharpier, -- c# formatter
+				formatting.prettierd, -- js/ts formatter
+				formatting.shfmt, -- shell formatter
+				formatting.stylua, -- lua formatter
 			},
 			on_attach = function(current_client, bufnr)
 				if current_client.supports_method("textDocument/formatting") then
