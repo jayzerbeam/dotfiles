@@ -141,6 +141,7 @@ return {
 					n = { "<cmd>bnext<CR>", "Next Buffer" },
 					p = { "<cmd>bprev<CR>", "Previous Buffer" },
 					q = { "<cmd>bdelete<CR>", "Delete Buffer" },
+					Q = { "<cmd>%bdelete<CR>", "Delete All Buffers" },
 				},
 				h = {
 					name = "Highlights",
