@@ -1,6 +1,10 @@
 return {
 	"ggandor/leap.nvim",
-	init = function()
-		require("leap").add_default_mappings()
+	config = function()
+		local leap = require("leap")
+		leap.opts.special_keys = {
+			next_target = "n",
+			prev_target = "p",
+		}
 	end,
 }
