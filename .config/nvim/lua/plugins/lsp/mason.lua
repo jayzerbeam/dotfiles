@@ -39,7 +39,8 @@ return {
 		mason_null_ls.setup({
 			-- linters/formatters
 			ensure_installed = {
-				"blackd-client", -- python formatter
+				"black", -- python formatter
+				-- "blackd-client", -- python formatter
 				"csharpier", -- csharp formatter
 				"prettierd", -- ts/js formatter
 				"stylua", -- lua formatter

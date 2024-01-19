@@ -17,7 +17,8 @@ return {
 					end,
 				}),
 				diagnostics.stylelint, -- CSS linter
-				formatting.blackd, -- python formatter
+				formatting.black, -- python formatter
+				-- formatting.blackd, -- python formatter
 				formatting.csharpier, -- c# formatter
 				formatting.prettierd, -- js/ts formatter
 				formatting.stylua, -- lua formatter

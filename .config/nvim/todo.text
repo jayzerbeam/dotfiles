@@ -1,0 +1,3 @@
+- JS files - conflicting LSP suggestions.
+- PY - use blackd instead of black
+- flit, leap - same keys for next/prev search match.
