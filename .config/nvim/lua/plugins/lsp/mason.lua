@@ -23,6 +23,7 @@ return {
 		mason_lspconfig.setup({
 			-- language servers
 			ensure_installed = {
+				"bashls",
 				"clangd",
 				"cssls",
 				"html",
@@ -43,6 +44,7 @@ return {
 				-- "blackd-client", -- python formatter
 				"csharpier", -- csharp formatter
 				"prettierd", -- ts/js formatter
+				"shfmt", -- bash formatter
 				"stylua", -- lua formatter
 				"stylelint", -- css linter
 				"eslint_d", -- ts/js linter

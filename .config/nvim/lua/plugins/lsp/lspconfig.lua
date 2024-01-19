@@ -24,6 +24,7 @@ return {
 		vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
 		-- LSP configs.
+		lspconfig.bashls.setup({})
 		lspconfig.clangd.setup({})
 		-- Does not work in Unity!
 		lspconfig.csharp_ls.setup({

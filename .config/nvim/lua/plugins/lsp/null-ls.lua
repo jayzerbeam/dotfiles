@@ -21,6 +21,7 @@ return {
 				-- formatting.blackd, -- python formatter
 				formatting.csharpier, -- c# formatter
 				formatting.prettierd, -- js/ts formatter
+				formatting.shfmt, -- bash formatter
 				formatting.stylua, -- lua formatter
 			},
 			on_attach = function(current_client, bufnr)
