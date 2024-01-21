@@ -25,7 +25,7 @@ config.default_workspace = "home"
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.inactive_pane_hsb = {
-	brightness = 0.5,
+	brightness = 0.7,
 	saturation = 0.5,
 }
 config.font = wezterm.font_with_fallback({

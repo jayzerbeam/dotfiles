@@ -17,9 +17,11 @@ return {
 					end,
 				}),
 				diagnostics.stylelint, -- CSS linter
-				formatting.blackd, -- python formatter
+				formatting.black, -- python formatter
+				-- formatting.blackd, -- python formatter
 				formatting.csharpier, -- c# formatter
 				formatting.prettierd, -- js/ts formatter
+				formatting.shfmt, -- bash formatter
 				formatting.stylua, -- lua formatter
 			},
 			on_attach = function(current_client, bufnr)
