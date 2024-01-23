@@ -9,6 +9,5 @@ return {
 	{ "tpope/vim-repeat" },
 	{ "tpope/vim-surround" },
 	{ "vim-scripts/ReplaceWithRegister" },
-	{ "windwp/nvim-autopairs" },
 	{ "windwp/nvim-ts-autotag" },
 }
