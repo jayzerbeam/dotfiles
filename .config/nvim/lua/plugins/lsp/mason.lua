@@ -26,6 +26,7 @@ return {
 				"bashls",
 				"clangd",
 				"cssls",
+				"csharp_ls",
 				"html",
 				"jsonls",
 				"stylelint_lsp",
