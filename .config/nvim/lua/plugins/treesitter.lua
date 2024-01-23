@@ -28,7 +28,7 @@ return {
 				"vim",
 				"yaml",
 			},
-			auto_install = false,
+			auto_install = true,
 			incremental_selection = {
 				enable = true,
 				keymaps = {
