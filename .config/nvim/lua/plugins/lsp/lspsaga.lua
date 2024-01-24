@@ -16,11 +16,11 @@ return {
 			},
 			ui = {
 				border = "rounded",
-				code_action = " ",
+				code_action = "",
 			},
 			lightbulb = {
 				enable = true,
-				virtual_text = true,
+				virtual_text = false,
 			},
 			move_in_saga = { prev = "<C-p>", next = "<C-n>" },
 			outline = {

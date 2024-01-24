@@ -20,7 +20,7 @@ return {
 		end
 
 		-- Diagnostic config.
-		vim.diagnostic.config({ virtual_text = true })
+		vim.diagnostic.config({ virtual_text = false })
 		vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
 		-- LSP configs.
