@@ -34,7 +34,6 @@ return {
 				{ name = "calc" },
 				{ name = "luasnip" }, -- snippets
 				{ name = "nvim_lsp" }, -- lsp
-				{ name = "nvim_lsp_signature_help" },
 				{ name = "path" }, -- file system paths
 				{ name = "rg", keyword_length = 5 },
 			}),

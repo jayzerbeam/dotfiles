@@ -38,15 +38,15 @@ return {
 		lspconfig.cssls.setup({})
 		lspconfig["emmet_ls"].setup({
 			filetypes = {
+				-- "css",
 				"html",
-				"typescriptreact",
-				"javascript",
+				-- "javascript",
 				"javascriptreact",
-				"css",
-				"sass",
-				"scss",
-				"less",
-				"vue",
+				-- "less",
+				-- "sass",
+				-- "scss",
+				"typescriptreact",
+				-- "vue",
 			},
 		})
 		lspconfig.html.setup({})
