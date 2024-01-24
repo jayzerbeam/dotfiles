@@ -12,7 +12,7 @@ return {
 			opts = {
 				special_keys = {
 					next_target = "n",
-					prev_target = "p",
+					prev_target = "N",
 				},
 			},
 		})

@@ -20,7 +20,7 @@ return {
 		end
 
 		-- Diagnostic config.
-		vim.diagnostic.config({ virtual_text = true })
+		vim.diagnostic.config({ virtual_text = false })
 		vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
 		-- LSP configs.
@@ -38,15 +38,15 @@ return {
 		lspconfig.cssls.setup({})
 		lspconfig["emmet_ls"].setup({
 			filetypes = {
+				-- "css",
 				"html",
-				"typescriptreact",
-				"javascript",
+				-- "javascript",
 				"javascriptreact",
-				"css",
-				"sass",
-				"scss",
-				"less",
-				"vue",
+				-- "less",
+				-- "sass",
+				-- "scss",
+				"typescriptreact",
+				-- "vue",
 			},
 		})
 		lspconfig.html.setup({})
