@@ -17,9 +17,11 @@ return {
 					end,
 				}),
 				diagnostics.stylelint, -- CSS linter
+				diagnostics.gdlint, -- gdscript linter
 				formatting.black, -- python formatter
 				-- formatting.blackd, -- python formatter
 				formatting.csharpier, -- c# formatter
+				formatting.gdformat, -- gdscript formatter
 				formatting.prettierd, -- js/ts formatter
 				formatting.shfmt, -- bash formatter
 				formatting.stylua, -- lua formatter
