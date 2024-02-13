@@ -44,6 +44,7 @@ return {
 				"black", -- python formatter
 				-- "blackd-client", -- python formatter
 				"csharpier", -- csharp formatter
+				"gdtoolkit", -- gdscript
 				"prettierd", -- ts/js formatter
 				"shfmt", -- bash formatter
 				"stylua", -- lua formatter
