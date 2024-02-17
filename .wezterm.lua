@@ -12,7 +12,7 @@ config.colors = {
 	cursor_bg = "#CDD6F4",
 	cursor_fg = "#1E1E2E",
 	tab_bar = {
-		background = "#1E1E2E",
+		background = "#101019",
 		active_tab = {
 			bg_color = "#1E1E2E",
 			fg_color = "#CDD6F4",
@@ -20,16 +20,16 @@ config.colors = {
 			italic = true,
 		},
 		inactive_tab = {
-			bg_color = "#1E1E2E",
+			bg_color = "#161622",
 			fg_color = "#6C7086",
 		},
 		inactive_tab_hover = {
-			bg_color = "#1E1E2E",
+			bg_color = "#161622",
 			fg_color = "#6C7086",
 			italic = true,
 		},
 		new_tab_hover = {
-			bg_color = "#1E1E2E",
+			bg_color = "#161622",
 			fg_color = "#6C7086",
 			italic = true,
 		},
@@ -39,21 +39,21 @@ config.color_scheme = "Catppuccin Mocha"
 config.default_workspace = "home"
 config.enable_tab_bar = true
 -- Match tab bar width to neovim buffer width
-config.hide_tab_bar_if_only_one_tab = true
+config.hide_tab_bar_if_only_one_tab = false
 config.inactive_pane_hsb = {
 	brightness = 0.75,
 	saturation = 1.0,
 }
-config.font = wezterm.font_with_fallback({
-	{ family = "MonoLisa Nerd Font", weight = "Regular" },
-})
-config.font_size = 15
-config.scrollback_lines = 10000
--- config.tab_bar_at_bottom = true
-config.tab_max_width = 23
-config.use_fancy_tab_bar = false
 -- keys
-config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
+config.key_tables = {
+	resize_pane = {
+		{ key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
+		{ key = "l", action = act.AdjustPaneSize({ "Right", 1 }) },
+		{ key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
+		{ key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
+		{ key = "Escape", action = "PopKeyTable" },
+	},
+}
 config.keys = {
 	-- standard
 	{ key = "b", mods = "LEADER|CTRL", action = act.SendKey({ key = "b", mods = "CTRL" }) },
@@ -78,6 +78,15 @@ config.keys = {
 	{ key = "t", mods = "LEADER", action = act.ShowTabNavigator },
 	{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 }
+config.font = wezterm.font_with_fallback({
+	{ family = "MonoLisa Nerd Font", weight = "Regular" },
+})
+config.font_size = 15
+config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
+config.scrollback_lines = 10000
+config.tab_bar_at_bottom = true
+config.tab_max_width = 23
+config.use_fancy_tab_bar = false
 
 for i = 1, 9 do
 	table.insert(config.keys, {
@@ -86,15 +95,5 @@ for i = 1, 9 do
 		action = act.ActivateTab(i - 1),
 	})
 end
-
-config.key_tables = {
-	resize_pane = {
-		{ key = "h", action = act.AdjustPaneSize({ "Left", 1 }) },
-		{ key = "l", action = act.AdjustPaneSize({ "Right", 1 }) },
-		{ key = "j", action = act.AdjustPaneSize({ "Down", 1 }) },
-		{ key = "k", action = act.AdjustPaneSize({ "Up", 1 }) },
-		{ key = "Escape", action = "PopKeyTable" },
-	},
-}
 
 return config
