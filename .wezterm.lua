@@ -7,33 +7,50 @@ if wezterm.config_builder then
 end
 
 config.audible_bell = "Disabled"
--- config.background = {
--- 	{
--- 		hsb = {
--- 			brightness = 0.015,
--- 			hue = 0.1,
--- 			saturation = 0.1,
--- 		},
--- 		opacity = 1.0,
--- 		source = {
--- 			File = "./Pictures/Wallpaper/makima.jpg",
--- 		},
--- 	},
--- }
+config.colors = {
+	-- Better cursor color.
+	cursor_bg = "#CDD6F4",
+	cursor_fg = "#1E1E2E",
+	tab_bar = {
+		background = "#1E1E2E",
+		active_tab = {
+			bg_color = "#1E1E2E",
+			fg_color = "#CDD6F4",
+			intensity = "Bold",
+			italic = true,
+		},
+		inactive_tab = {
+			bg_color = "#1E1E2E",
+			fg_color = "#6C7086",
+		},
+		inactive_tab_hover = {
+			bg_color = "#1E1E2E",
+			fg_color = "#6C7086",
+			italic = true,
+		},
+		new_tab_hover = {
+			bg_color = "#1E1E2E",
+			fg_color = "#6C7086",
+			italic = true,
+		},
+	},
+}
 config.color_scheme = "Catppuccin Mocha"
 config.default_workspace = "home"
 config.enable_tab_bar = true
+-- Match tab bar width to neovim buffer width
 config.hide_tab_bar_if_only_one_tab = true
 config.inactive_pane_hsb = {
 	brightness = 0.75,
 	saturation = 1.0,
 }
 config.font = wezterm.font_with_fallback({
-	{ family = "MonoLisa Custom Nerd Font", weight = "Medium" },
-	{ family = "MonoLisa Custom Nerd Font", weight = "Regular" },
+	{ family = "MonoLisa Nerd Font", weight = "Regular" },
 })
 config.font_size = 15
 config.scrollback_lines = 10000
+-- config.tab_bar_at_bottom = true
+config.tab_max_width = 23
 config.use_fancy_tab_bar = false
 -- keys
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
