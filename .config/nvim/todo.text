@@ -1,1 +1,5 @@
 - PY - use blackd instead of black
+- Java - set up java-debug
+- Debug bufferline background colors displaying incorrectly
+- f/F/t/T color - update to match colorscheme
+- yank inverse of colorscheme

@@ -22,6 +22,7 @@ return {
 				-- formatting.blackd, -- python formatter
 				formatting.csharpier, -- c# formatter
 				formatting.gdformat, -- gdscript formatter
+				formatting.google_java_format, -- java formatter
 				formatting.prettierd, -- js/ts formatter
 				formatting.shfmt, -- bash formatter
 				formatting.stylua, -- lua formatter

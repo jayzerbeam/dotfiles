@@ -8,10 +8,11 @@ return {
 		"jay-babu/mason-nvim-dap.nvim",
 		"theHamsta/nvim-dap-virtual-text",
 		-- Adapters
-		"mxsdev/nvim-dap-vscode-js",
-		"mfussenegger/nvim-dap-python",
-		"microsoft/vscode-js-debug",
 		"microsoft/debugpy",
+		"microsoft/java-debug",
+		"microsoft/vscode-js-debug",
+		"mfussenegger/nvim-dap-python",
+		"mxsdev/nvim-dap-vscode-js",
 	},
 	config = function()
 		local dap = require("dap")

@@ -29,6 +29,7 @@ return {
 				"csharp_ls",
 				"html",
 				"jsonls",
+				"jdtls",
 				"stylelint_lsp",
 				"lua_ls",
 				"pyright",
@@ -45,6 +46,7 @@ return {
 				-- "blackd-client", -- python formatter
 				"csharpier", -- csharp formatter
 				"gdtoolkit", -- gdscript
+				"google-java-format", -- java
 				"prettierd", -- ts/js formatter
 				"shfmt", -- bash formatter
 				"stylua", -- lua formatter
