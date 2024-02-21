@@ -28,7 +28,7 @@ return {
 
 		local config = {
 			handlers = {
-				["$/progress"] = function(_, result, ctx) end,
+				["$/progress"] = function() end,
 			},
 			cmd = {
 				-- "java" -- if java is in your path
@@ -107,14 +107,6 @@ return {
 						},
 						useBlocks = true,
 					},
-					-- configuration = {
-					-- 	runtimes = {
-					-- 		{
-					-- 			name = "java-21-openjdk",
-					-- 			path = "/usr/lib/jvm/default-java/bin/java",
-					-- 		},
-					-- 	},
-					-- },
 					project = {
 						referencedLibraries = {
 							"**/lib/*.jar",
@@ -144,6 +136,7 @@ return {
 				extendedClientCapabilities = extendedClientCapabilities,
 			},
 		}
+
 		jdtls.start_or_attach(config)
 	end,
 }

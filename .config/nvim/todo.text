@@ -1,5 +1,5 @@
 - PY - use blackd instead of black
-- Java - set up java-debug
+- Java - set up java-debug/DAP
 - Debug bufferline background colors displaying incorrectly
-- f/F/t/T color - update to match colorscheme
-- yank inverse of colorscheme
+- yank inverse of colorscheme 
+- create common icons/colors file 
