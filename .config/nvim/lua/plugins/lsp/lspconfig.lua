@@ -50,7 +50,6 @@ return {
 			},
 		})
 		lspconfig.html.setup({})
-		lspconfig.jdtls.setup({})
 		lspconfig.jsonls.setup({})
 		lspconfig.lua_ls.setup({
 			settings = {
