@@ -15,7 +15,7 @@ config.colors = {
 		background = "#101019",
 		active_tab = {
 			bg_color = "#1E1E2E",
-			fg_color = "#CDD6F4",
+			fg_color = "#CBA6F7",
 			intensity = "Bold",
 			italic = true,
 		},
@@ -84,7 +84,7 @@ config.font = wezterm.font_with_fallback({
 config.font_size = 15
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 config.scrollback_lines = 10000
-config.tab_bar_at_bottom = true
+config.tab_bar_at_bottom = false
 config.tab_max_width = 22
 config.use_fancy_tab_bar = false
 

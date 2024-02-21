@@ -1,7 +1,5 @@
 -- This file is automatically loaded by plugins.init
 
-vim.api.nvim_create_augroup("YankHighlight", { clear = true })
-
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 	callback = function(ev)
@@ -20,9 +18,30 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("YankHighlight", {}),
 	callback = function()
-		vim.highlight.on_yank({ higroup = "IncSearch", timeout = "1000" })
+		vim.highlight.on_yank({ higroup = "IncSearch", timeout = "2000" })
 	end,
 	desc = "Highlight yanked text",
+})
+
+-- leap highlight
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		vim.api.nvim_set_hl(
+			0,
+			"LeapMatch",
+			{ bg = "#cba6f7", fg = "#1E1E2E", underline = true, italic = true, bold = true }
+		)
+		vim.api.nvim_set_hl(
+			0,
+			"LeapLabelPrimary",
+			{ bg = "#f38ba8", fg = "#1E1E2E", underline = true, italic = true, bold = true }
+		)
+		vim.api.nvim_set_hl(
+			0,
+			"LeapLabelSecondary",
+			{ bg = "#94e2d5", fg = "#1E1E2E", underline = true, italic = true, bold = true }
+		)
+	end,
 })
 
 -- Use internal formatting for bindings like gq.
