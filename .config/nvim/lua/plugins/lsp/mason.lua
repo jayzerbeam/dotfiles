@@ -43,7 +43,6 @@ return {
 			-- linters/formatters
 			ensure_installed = {
 				"black", -- python formatter
-				-- "blackd-client", -- python formatter
 				"csharpier", -- csharp formatter
 				"gdtoolkit", -- gdscript
 				"google-java-format", -- java
@@ -51,7 +50,6 @@ return {
 				"shfmt", -- bash formatter
 				"stylua", -- lua formatter
 				"stylelint", -- css linter
-				"eslint_d", -- ts/js linter
 			},
 			automatic_installation = true,
 		})

@@ -49,6 +49,7 @@ return {
 				-- "vue",
 			},
 		})
+		lspconfig.eslint.setup({})
 		lspconfig.html.setup({})
 		lspconfig.jsonls.setup({})
 		lspconfig.lua_ls.setup({

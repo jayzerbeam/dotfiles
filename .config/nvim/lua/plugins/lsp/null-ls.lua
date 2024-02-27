@@ -11,15 +11,9 @@ return {
 
 		null_ls.setup({
 			sources = {
-				diagnostics.eslint_d.with({ -- js/ts linter
-					condition = function(utils)
-						return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
-					end,
-				}),
 				diagnostics.stylelint, -- CSS linter
 				diagnostics.gdlint, -- gdscript linter
 				formatting.black, -- python formatter
-				-- formatting.blackd, -- python formatter
 				formatting.csharpier, -- c# formatter
 				formatting.gdformat, -- gdscript formatter
 				formatting.google_java_format, -- java formatter
