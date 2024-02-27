@@ -1,4 +1,3 @@
-- PY - use blackd instead of black
 - Java - set up java-debug/DAP
 - Debug bufferline background colors displaying incorrectly
 - yank inverse of colorscheme 
