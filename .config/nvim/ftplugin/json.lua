@@ -1,6 +1,6 @@
 local opt = vim.opt
 
-opt.filetype = "javascript"
+opt.filetype = "json"
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
